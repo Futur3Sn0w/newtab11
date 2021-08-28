@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="globals.css">
     <link rel="stylesheet" href="navigation.css">
     <link rel="stylesheet" href="bodyContent.css">
-    <script src="javascript.js"></script>
 </head>
 <body>
 
     <section class="topNav">
         <div class="navIcon">Ă</div>
         <div class="navTitle">New Tab <p>PREVIEW</p></div>
+        <!-- <input type="text" class="searchField" id="searchField" placeholder="Search the web"> -->
         <div class="profile">
             <img src="prof.jpg" class="tnProfIcon">
         </div>
@@ -64,18 +64,7 @@
         <section class="cElse"></section>
     </section>
 
-    <script>
-        const btnLeft = document.getElementById('bwLeft');
-        const btnRight = document.getElementById('bwRight');
-
-        btnRight.onclick = function () {
-            document.getElementById('boardwalk').scrollLeft += 230;
-        };
-
-        btnLeft.onclick = function () {
-            document.getElementById('boardwalk').scrollLeft -= 230;
-        };
-    </script>
+    <script src="javascript.js"></script>
     
 </body>
 </html>

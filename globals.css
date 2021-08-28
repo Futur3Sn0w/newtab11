@@ -1,21 +1,28 @@
 @media (prefers-color-scheme: light){
     :root{
-        --page-background: #FFFFFF;
-        --page-border: #FFFFFF;
+        --site-background: rgb(243, 243, 243);
+        --page-background: rgb(249, 249, 249);
+        --page-border: rgb(229, 229, 229);
 
         --accent-color-1: purple;
 
-        --font-color-1: #000;
+        --font-color-1: rgb(134, 134, 134);
         --font-color-2: black;
 
-        --button-hover: #000;
-        --button-active: #000;
+        --button-hover: rgb(234, 234, 234);
+        --button-active: #FFF;
+
+        --search-border: rgb(232, 232, 232);
+        --search-border-bottom: rgb(207, 207, 207);
+        --search-font-color: rgb(97, 97, 97);
+        --search-font-focus: rgb(0, 0, 0);
     }
 }
 
 @media (prefers-color-scheme: dark){
     :root{
-        --page-background: rgb(32, 32, 32);
+        --site-background: rgb(32, 32, 32);
+        --page-background: rgb(249, 249, 249);
         --page-border: rgb(29, 29, 29);
 
         --accent-color-1: rgb(143, 69, 212);
@@ -25,6 +32,11 @@
 
         --button-hover: rgb(45, 45, 45);
         --button-active: rgb(69, 69, 69);
+
+        --search-border: rgb(232, 232, 232);
+        --search-border-bottom: rgb(207, 207, 207);
+        --search-font-color: rgb(97, 97, 97);
+        --search-font-focus: rgb(97, 97, 97);
     }
 }
 

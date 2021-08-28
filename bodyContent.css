@@ -18,7 +18,7 @@
     
     overflow: hidden;
 
-    background-color: rgb(37, 37, 37);
+    background-color: var(--page-background);
     border-top-left-radius: 6px;
     border-top: 1px solid var(--page-border);
     border-left: 1px solid var(--page-border);
