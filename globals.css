@@ -20,6 +20,8 @@
         --menu-back: rgba(247, 247, 247, 0.8);
         --menu-sep: rgba(0, 0, 0, 0.1);
         --menu-btn: rgba(0, 0, 0, 0.1);
+
+        --button-semitransp: rgba(243, 243, 243, 0.8);
     }
 }
 

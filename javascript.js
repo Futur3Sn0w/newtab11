@@ -9,6 +9,8 @@ const profIcn = document.getElementById("profIconBtn");
 
 const settingsBtn = document.getElementById("settingsBtn");
 const settingsPane = document.getElementById("settingsPanel");
+const settingsBackdrop = document.getElementById("spBackdrop");
+const settingsWindow = document.getElementById("spWindow");
 
 btnRight.onclick = function () {
     document.getElementById('boardwalk').scrollLeft += 230;
@@ -53,10 +55,15 @@ $("#searchField").on('keydown', function (e) {
 });
 
 settingsBtn.onclick = function () {
-    settingsPane.style.bottom = "0";
-    showHideProfMenu();
+    settingsPane.style.zIndex = 50;
+    settingsWindow.style.transform = "scale(1)";
+    settingsWindow.style.opacity = "1";
+    settingsBackdrop.style.opacity = "1";
 }
 
 function closeSettings() {
-    settingsPane.style.bottom = "-100%"
+    settingsWindow.style.transform = "scale(.8)";
+    settingsWindow.style.opacity = "0"
+    settingsBackdrop.style.opacity = "0";
+    settingsPane.style.zIndex = -50;
 }

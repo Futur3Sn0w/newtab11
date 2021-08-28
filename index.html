@@ -16,7 +16,14 @@
     <section class="topNav">
         <div class="navIcon">Ă</div>
         <div class="navTitle">New Tab <p>PREVIEW</p></div>
-        <input type="text" class="searchField" id="searchField" placeholder="Search the web" onkeydown="if (event.keyCode == 13 || event.which == 13) { location='http://www.google.com/search?q=' + encodeURIComponent(document.getElementById('searchField').value);}">
+        <input type="text" 
+        class="searchField" 
+        id="searchField" 
+        placeholder="Search the web" 
+        onkeydown="if (event.keyCode == 13 || event.which == 13) { location='http://www.google.com/search?q=' + encodeURIComponent(document.getElementById('searchField').value);}"
+        onfocus="this.placeholder = ''"
+        onblur="this.placeholder = 'Search the web'"
+        >
         <div class="profile" id="profButton">
             <img src="prof.jpg" class="tnProfIcon" id="profIconBtn">
             <div class="profMenu" id="profMenu">
@@ -45,9 +52,10 @@
 
     <section class="content">
         <section class="settingsPanel" id="settingsPanel">
-        <div class="spBackdrop" onclick="closeSettings()"></div>
-        <div class="spWindow"></div>
-        <div class="spCloseBtn" onclick="closeSettings()"></div>
+        <div class="spBackdrop" id="spBackdrop" onclick="closeSettings()"></div>
+        <div class="spWindow" id="spWindow">
+        <div class="spCloseBtn" onclick="closeSettings()"></div>
+        </div>
         </section>
 
         <div class="cLabel">Home</div>

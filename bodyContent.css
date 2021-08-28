@@ -182,14 +182,11 @@
     height: 100%;
 
     position: absolute;
-    z-index: 50;
-    bottom: -100%;
+    z-index: -100;
 
     display: flex;
     align-items: center;
     justify-content: center;
-
-    transition: bottom .2s;
 }
 
 .spBackdrop{
@@ -201,6 +198,10 @@
 
     background-color: rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(15px);
+
+    opacity: 0;
+
+    transition: opacity .1s;
 }
 
 .spWindow{
@@ -212,6 +213,35 @@
     position: relative;
     z-index: 50;
 
+    transform: scale(.8);
+    opacity: 0;
+
     background-color: var(--page-background);
     border-radius: 6px;
+
+    transition: transform .2s, opacity .2s;
+}
+
+.spCloseBtn{
+    width: 45px;
+    height: 45px;
+
+    border-radius: 5px;
+
+    background-color: var(--button-semitransp);
+    backdrop-filter: blur(5px);
+
+    cursor: pointer;
+
+    font-family: FLNTREG;
+    font-size: 20px;
+    color: var(--font-color-2);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    right: -8%;
+    z-index: 50;
 }
