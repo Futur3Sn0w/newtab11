@@ -9,15 +9,27 @@
     <link rel="stylesheet" href="globals.css">
     <link rel="stylesheet" href="navigation.css">
     <link rel="stylesheet" href="bodyContent.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
 <body>
 
     <section class="topNav">
         <div class="navIcon">Ă</div>
         <div class="navTitle">New Tab <p>PREVIEW</p></div>
-        <!-- <input type="text" class="searchField" id="searchField" placeholder="Search the web"> -->
-        <div class="profile">
-            <img src="prof.jpg" class="tnProfIcon">
+        <input type="text" class="searchField" id="searchField" placeholder="Search the web" onkeydown="if (event.keyCode == 13 || event.which == 13) { location='http://www.google.com/search?q=' + encodeURIComponent(document.getElementById('searchField').value);}">
+        <div class="profile" id="profButton">
+            <img src="prof.jpg" class="tnProfIcon" id="profIconBtn">
+            <div class="profMenu" id="profMenu">
+                <div class="pmAboutMe">
+                    <img src="prof.jpg" class="pmamProfIcon">
+                    <div class="pmamText">
+                        <div class="ptName">Adam Hurd</div>
+                        <div class="ptEmail">futur3sn0w@outlook.com</div>
+                        <div class="ptEdit">Change my info</div>
+                    </div>
+                </div>
+                <div class="pmSettingsBtn" id="settingsBtn"><p>Settings</p></div>
+            </div>
         </div>
     </section>
 
@@ -32,6 +44,12 @@
     </section>
 
     <section class="content">
+        <section class="settingsPanel" id="settingsPanel">
+        <div class="spBackdrop" onclick="closeSettings()"></div>
+        <div class="spWindow"></div>
+        <div class="spCloseBtn" onclick="closeSettings()"></div>
+        </section>
+
         <div class="cLabel">Home</div>
         <section class="cSpotlight">
             <div class="csImage"></div>

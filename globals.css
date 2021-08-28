@@ -16,6 +16,10 @@
         --search-border-bottom: rgb(207, 207, 207);
         --search-font-color: rgb(97, 97, 97);
         --search-font-focus: rgb(0, 0, 0);
+
+        --menu-back: rgba(247, 247, 247, 0.8);
+        --menu-sep: rgba(0, 0, 0, 0.1);
+        --menu-btn: rgba(0, 0, 0, 0.1);
     }
 }
 
@@ -37,6 +41,10 @@
         --search-border-bottom: rgb(207, 207, 207);
         --search-font-color: rgb(97, 97, 97);
         --search-font-focus: rgb(97, 97, 97);
+
+        --menu-back: rgba(247, 247, 247, 0.8);
+        --menu-sep: rgba(0, 0, 0, 0.1);
+        --menu-btn: rgba(247, 247, 247, 0.4);
     }
 }
 

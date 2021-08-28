@@ -73,6 +73,102 @@
     width: 35px;
     border-radius: 50%;
     margin-top: 5px;
+
+    transition: transform .15s;
+}
+
+/* Profile Menu */
+
+.profMenu{
+    position: absolute;
+    z-index: 100;
+    right: 10px;
+
+    width: 280px;
+    height: fit-content;
+    padding: 15px 15px 10px 15px;
+
+    border-radius: 6px;
+    background-color: var(--menu-back);
+    border: 1px solid var(--search-border);
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.20);
+
+    overflow: hidden;
+
+    transform: scale(0);
+    transform-origin: top right;
+
+    transition: transform .3s, opacity .2s;
+}
+
+.pmAboutMe{
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--menu-sep);
+
+    display: flex;
+    align-items: center;
+}
+
+.pmamProfIcon{
+    width: 80px;
+    border-radius: 200px;
+}
+
+.pmamText{
+    padding-left: 10px;
+    color: var(--font-color-2);
+}
+
+.ptName{
+    font-weight: 600;
+}
+
+.ptEmail{
+    font-size: 13px;
+    opacity: .6;
+}
+
+.ptEdit{
+    padding-top: 5px;
+    font-size: 12px;
+    opacity: .7;
+    cursor: pointer;
+}
+
+.pmSettingsBtn{
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+
+    font-family: FLNTREG;
+    font-size: 20px;
+
+    color: var(--font-color-2);
+    border-radius: 6px;
+    
+    height: 40px;
+
+    margin: 5px 0 0 0;
+    padding: 5px 10px;
+
+    cursor: pointer;
+}
+
+.pmSettingsBtn p{
+    padding-left: 10px;
+
+    font-family: 'Segoe UI';
+    font-size: 14px;
+}
+
+.pmSettingsBtn:hover{
+    background-color: var(--menu-btn);
+}
+
+.ptEdit:hover{
+    text-decoration: underline;
+    opacity: 1;
 }
 
 /* Sidebar navigation */
