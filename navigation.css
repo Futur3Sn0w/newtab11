@@ -154,6 +154,8 @@
     padding: 5px 10px;
 
     cursor: pointer;
+
+    user-select: none;
 }
 
 .pmSettingsBtn p{
@@ -208,6 +210,8 @@
 
     font-size: 25px;
     font-family: FLNTREG;
+
+    user-select: none;
 }
 
 .sbButton:hover{
