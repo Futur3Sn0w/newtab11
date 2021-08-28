@@ -1,0 +1,67 @@
+@media (prefers-color-scheme: light){
+    :root{
+        --page-background: #FFFFFF;
+        --page-border: #FFFFFF;
+
+        --accent-color-1: purple;
+
+        --font-color-1: #000;
+        --font-color-2: black;
+
+        --button-hover: #000;
+        --button-active: #000;
+    }
+}
+
+@media (prefers-color-scheme: dark){
+    :root{
+        --page-background: rgb(32, 32, 32);
+        --page-border: rgb(29, 29, 29);
+
+        --accent-color-1: rgb(143, 69, 212);
+
+        --font-color-1: rgb(154, 154, 154);
+        --font-color-2: white;
+
+        --button-hover: rgb(45, 45, 45);
+        --button-active: rgb(69, 69, 69);
+    }
+}
+
+@font-face {
+    font-family: FLNTFILL;
+    src: url(fonts/fluent_filled.ttf);
+}
+
+@font-face {
+    font-family: FLNTREG;
+    src: url(fonts/fluent_reg.ttf);
+}
+
+.chbTab1{
+    background-image: url(boardwalkTiles/1feedly.png);
+}
+
+.chbTab2{
+    background-image: url(boardwalkTiles/2twitter.png);
+}
+
+.chbTab3{
+    background-image: url(boardwalkTiles/3youtube.png);
+}
+
+.chbTab4{
+    background-image: url(boardwalkTiles/4reddit.png);
+}
+
+.chbTab5{
+    background-image: url(boardwalkTiles/5deviantart.png);
+}
+
+.chbTab6{
+    background-image: url(boardwalkTiles/6netflix.png);
+}
+
+.chbTab7{
+    background-image: url(boardwalkTiles/7apv.png);
+}

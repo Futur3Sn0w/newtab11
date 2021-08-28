@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tab</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="globals.css">
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="bodyContent.css">
+    <script src="javascript.js"></script>
+</head>
+<body>
+
+    <section class="topNav">
+        <div class="navIcon">Ă</div>
+        <div class="navTitle">New Tab <p>PREVIEW</p></div>
+        <div class="profile">
+            <img src="prof.jpg" class="tnProfIcon">
+        </div>
+    </section>
+
+    <section class="sideNav">
+        <a class="sbButton sbbActive sbBtn1">
+            <div class="sbbaInd"></div>
+        </a>
+        <a href="https://mail.google.com" class="sbButton sbbInactive sbBtn2" data-sbbLabel="Gmail"></a>
+        <a href="https://images.google.com" class="sbButton sbbInactive sbBtn3" data-sbbLabel="Images"></a>
+        <a href="https://drive.google.com" class="sbButton sbbInactive sbBtn4" style="margin-top: auto" data-sbbLabel="Drive"></a>
+        <a href="https://photos.google.com" class="sbButton sbbInactive sbBtn5" style="margin-bottom: 55px" data-sbbLabel="Photos"></a>
+    </section>
+
+    <section class="content">
+        <div class="cLabel">Home</div>
+        <section class="cSpotlight">
+            <div class="csImage"></div>
+            <div class="chBoardwalk" id="boardwalk">
+                    <div class="scrollBtn sbEnd" id="bwLeft"></div>
+                    <div class="scrollBtn sbStart" id="bwRight"></div>
+                <a href="https://www.feedly.com" class="chbTile chbTab1" data-chbtSiteName="Feedly">
+                    <div class="chbGrad"></div>
+                </a>
+                <a href="https://www.twitter.com" class="chbTile chbTab2" data-chbtSiteName="Twitter">
+                    <div class="chbGrad"></div>
+                </a>
+                <a href="https://www.youtube.com" class="chbTile chbTab3" data-chbtSiteName="YouTube">
+                    <div class="chbGrad"></div>
+                </a>
+                <a href="https://www.reddit.com" class="chbTile chbTab4" data-chbtSiteName="Reddit">
+                    <div class="chbGrad"></div>
+                </a>
+                <a href="https://www.deviantart.com" class="chbTile chbTab5" data-chbtSiteName="DeviantArt">
+                    <div class="chbGrad"></div>
+                </a>
+                <a href="https://www.netflix.com" class="chbTile chbTab6" data-chbtSiteName="Netflix">
+                    <div class="chbGrad"></div>
+                </a>
+                <a href="https://www.amazon.com/Amazon-Video/b?ie=UTF8&node=2858778011&ref_=nav_custrec_signin&" class="chbTile chbTab7" data-chbtSiteName="Amazon Prime Video">
+                    <div class="chbGrad"></div>
+                </a>
+            </div>
+        </section>
+        <section class="cElse"></section>
+    </section>
+
+    <script>
+        const btnLeft = document.getElementById('bwLeft');
+        const btnRight = document.getElementById('bwRight');
+
+        btnRight.onclick = function () {
+            document.getElementById('boardwalk').scrollLeft += 230;
+        };
+
+        btnLeft.onclick = function () {
+            document.getElementById('boardwalk').scrollLeft -= 230;
+        };
+    </script>
+    
+</body>
+</html>

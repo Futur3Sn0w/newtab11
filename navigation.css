@@ -1,0 +1,151 @@
+/* Header navigation */
+
+.topNav{
+    width: 100vw;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+
+}
+
+.navIcon{
+    height: 100%;
+    width: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: FLNTFILL;
+    font-size: 20px;
+
+    color: white;
+}
+
+.navTitle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: var(--font-color-2);
+}
+
+.navTitle p{
+    font-size: 10px;
+    opacity: .8;
+}
+
+.profile{
+    margin-left: auto;
+    padding-right: 10px;
+}
+
+.tnProfIcon{
+    width: 35px;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+
+/* Sidebar navigation */
+
+.sideNav{
+    width: 75px;
+    height: 100vh;
+    padding: 0 5px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2px;
+}
+
+.sbButton{
+    width: 100%;
+    aspect-ratio: 1/1;
+    box-sizing: border-box;
+    position: relative;
+
+    background-color: transparent;
+    border-top: 1px solid transparent;
+    border-radius: 6px;
+
+    transition: border-top .1s, background-color .1s;
+    color: var(--font-color-2);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+    font-family: FLNTREG;
+}
+
+.sbButton:hover{
+    background-color: var(--button-hover);
+    border-top: 1px solid rgba(255, 255, 255, .06);
+}
+
+.sbbActive{
+    border-top: 1px solid rgba(255, 255, 255, .06);
+    background-color: var(--button-active);
+    color: var(--accent-color-1);
+
+    font-family: FLNTFILL;
+}
+
+.sbbaInd{
+    width: 6px;
+    height: 27px;
+
+    position: absolute;
+    left: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    background-color: var(--accent-color-1);
+
+    border-radius: 100px;
+}
+
+.sbbInactive{
+    color: var(--font-color-1);
+
+    transition: color .1s;
+
+    cursor: pointer;
+}
+
+.sbbInactive:hover{
+    color: var(--font-color-2);
+}
+
+.sbbInactive::after{
+    content: attr(data-sbbLabel);
+
+    font-family: 'Segoe UI';
+    font-size: 11px;
+    font-weight: 500;
+
+    opacity: .7;
+
+    height: 0;
+    overflow: hidden;
+
+    transition: height .1s;
+
+    padding-top: 3px;
+}
+
+.sbbInactive:hover::after{
+    height: 15px;
+}
