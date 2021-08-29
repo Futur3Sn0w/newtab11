@@ -99,7 +99,7 @@ function updateSpotlight(type = "unsplash") {
 
 function setBackgroundImage(url) {
     document.getElementById("csImage").style =
-        `background: url("` + url + `") center/cover no-repeat white`;
+        `background: linear-gradient(146deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 36%), url("` + url + `") center/cover no-repeat white`;
 }
 
 $('#siUnsplashTags').on('blur', function () {
