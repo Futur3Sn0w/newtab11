@@ -68,6 +68,10 @@
     src: url(fonts/fluent_reg.ttf);
 }
 
+.hidden{
+    display: none;
+}
+
 .chbTab1{
     background-image: url(boardwalkTiles/1feedly.png);
 }

@@ -73,11 +73,12 @@
                 <p class="spwcsTitle">Spotlight image:</p>
 
                 <label for="siUnsplash">
-                <input type="radio" id="siUnsplash" name="spotImgType" class="splashRadioBtn srbUnsplash" value="Unsplash daily">
+                <input onchange="siCheckRadios()" type="radio" id="siUnsplash" name="spotImgType" class="splashRadioBtn srbUnsplash" value="Unsplash daily">
                 Unsplash Daily Image</label>
+                <input type="text" id="siUnsplashTags" value="water landscape" class="hidden">
 
                 <label for="siCustom">
-                <input type="radio" id="siCustom" name="spotImgType" class="splashRadioBtn srbCustom" value="Custom image">
+                <input onchange="siCheckRadios()" type="radio" id="siCustom" name="spotImgType" class="splashRadioBtn srbCustom" value="Custom image">
                 Custom Image</label>
             </div>
         </div>
@@ -86,7 +87,7 @@
 
         <div class="cLabel">Home</div>
         <section class="cSpotlight">
-            <div class="csImage"></div>
+            <div class="csImage" id="csImage"></div>
             <div class="chBoardwalk" id="boardwalk">
                     <div class="scrollBtn sbEnd" id="bwLeft"></div>
                     <div class="scrollBtn sbStart" id="bwRight"></div>
