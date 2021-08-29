@@ -149,7 +149,9 @@ acBtn7.onclick = function accent1Red() {
     acBtn6.classList.remove("acpSelected");
     acBtn1.classList.remove("acpSelected");
 }
-//#region spotlight green
+
+
+//#region spotlight orange
 
 function siCheckRadios() {
     if (document.getElementById("siUnsplash").checked == true) {
@@ -158,6 +160,11 @@ function siCheckRadios() {
         updateSpotlight("unsplash");
     } else {
         document.getElementById("siUnsplashTags").classList.add("hidden");
+    }
+
+    if (document.getElementById("siWindows").checked == true) {
+        localStorage.setItem('spotlight', 'windows');
+        updateSpotlight("windows");
     }
 
     if (document.getElementById("siCustom").checked == true) {
@@ -174,11 +181,19 @@ function updateSpotlight(type = "unsplash") {
     if (type == "custom") {
         setBackgroundImage("https://i1.sndcdn.com/visuals-000068454168-UmsdHM-original.jpg");
     }
+    if (type == "windows") {
+        rightnow = Date.now();
+
+        apiUrl = "https://hubza.co.uk/pub/apis/windows_spotlight.php";
+        $.getJSON(apiUrl, function (data) {
+            setBackgroundImage(data['ad']['image_fullscreen_001_landscape']['u'])
+        });
+    }
 }
 
 function setBackgroundImage(url) {
     document.getElementById("csImage").style =
-        `background: linear-gradient(146deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 36%), url("` + url + `") center/cover no-repeat white`;
+        `background: linear-gradient(146deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 36%), url("` + url + `") center/cover no-repeat var(--page-background)`;
 }
 
 $('#siUnsplashTags').on('blur', function () {
@@ -207,13 +222,16 @@ $('#siUnsplashTags').on('blur', function () {
         updateSpotlight("custom");
     }
 
+    else if (localStorage.getItem("spotlight") == "windows") {
+        document.getElementById("siWindows").checked = true;
+        updateSpotlight("windows");
+    }
+
     else {
         document.getElementById("siCustom").checked = true;
         siCheckRadios();
         updateSpotlight();
     }
-
-    siCheckRadios();
 }
 
 //#endregion
