@@ -4,7 +4,7 @@
         --page-background: rgb(249, 249, 249);
         --page-border: rgb(229, 229, 229);
 
-        --modal-back: rgb(255, 255, 255);
+        --modal-back: rgba(255, 255, 255, 0.8);
 
         --accent-color-1: purple;
 
@@ -34,7 +34,7 @@
         --page-background: rgb(39, 39, 39);
         --page-border: rgb(29, 29, 29);
 
-        --modal-back: rgb(46, 46, 46);
+        --modal-back: rgba(46, 46, 46, 0.9);
 
         --accent-color-1: rgb(143, 69, 212);
 

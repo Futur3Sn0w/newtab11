@@ -232,8 +232,7 @@
     position: absolute;
     z-index: 49;
 
-    background-color: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(15px);
+    background-color: rgba(0, 0, 0, 0.5);
 
     opacity: 0;
 
@@ -253,6 +252,7 @@
     opacity: 0;
 
     background-color: var(--modal-back);
+    backdrop-filter: blur(20px);
     border-radius: 6px;
 
     transition: transform .2s, opacity .2s;
@@ -332,6 +332,12 @@
     opacity: .8;
 }
 
+.siOptions{
+    display: flex;
+    flex-direction: column;
+    margin-top: 7px;
+}
+
 .accColors{
     display: flex;
     gap: 5px;
@@ -339,8 +345,20 @@
 }
 
 .acPrev{
-    width: 20px;
-    height: 20px;
+    box-sizing: border-box;
+    width: 22px;
+    height: 22px;
 
     border-radius: 50px;
+    border: 3px solid transparent;
+
+    transition: opacity 40ms, border 40ms;
+}
+
+.acPrev:hover{
+    opacity: .5;
+}
+
+.acpSelected{
+    border: 3px solid rgb(123, 123, 123);
 }

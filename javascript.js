@@ -67,3 +67,83 @@ function closeSettings() {
     settingsBackdrop.style.opacity = "0";
     settingsPane.style.zIndex = -50;
 }
+
+// Settings control
+
+const acBtn1 = document.getElementById("ac1Red");
+const acBtn2 = document.getElementById("ac2Orange");
+const acBtn3 = document.getElementById("ac3Yellow");
+const acBtn4 = document.getElementById("ac4Green");
+const acBtn5 = document.getElementById("ac5Blue");
+const acBtn6 = document.getElementById("ac6Purple");
+const acBtn7 = document.getElementById("ac7Pink");
+
+acBtn1.onclick = function accent1Red() {
+    acBtn1.classList.add("acpSelected");
+    acBtn2.classList.remove("acpSelected");
+    acBtn3.classList.remove("acpSelected");
+    acBtn4.classList.remove("acpSelected");
+    acBtn5.classList.remove("acpSelected");
+    acBtn6.classList.remove("acpSelected");
+    acBtn7.classList.remove("acpSelected");
+}
+
+acBtn2.onclick = function accent1Red() {
+    acBtn2.classList.add("acpSelected");
+    acBtn1.classList.remove("acpSelected");
+    acBtn3.classList.remove("acpSelected");
+    acBtn4.classList.remove("acpSelected");
+    acBtn5.classList.remove("acpSelected");
+    acBtn6.classList.remove("acpSelected");
+    acBtn7.classList.remove("acpSelected");
+}
+
+acBtn3.onclick = function accent1Red() {
+    acBtn3.classList.add("acpSelected");
+    acBtn2.classList.remove("acpSelected");
+    acBtn1.classList.remove("acpSelected");
+    acBtn4.classList.remove("acpSelected");
+    acBtn5.classList.remove("acpSelected");
+    acBtn6.classList.remove("acpSelected");
+    acBtn7.classList.remove("acpSelected");
+}
+
+acBtn4.onclick = function accent1Red() {
+    acBtn4.classList.add("acpSelected");
+    acBtn2.classList.remove("acpSelected");
+    acBtn3.classList.remove("acpSelected");
+    acBtn1.classList.remove("acpSelected");
+    acBtn5.classList.remove("acpSelected");
+    acBtn6.classList.remove("acpSelected");
+    acBtn7.classList.remove("acpSelected");
+}
+
+acBtn5.onclick = function accent1Red() {
+    acBtn5.classList.add("acpSelected");
+    acBtn2.classList.remove("acpSelected");
+    acBtn3.classList.remove("acpSelected");
+    acBtn4.classList.remove("acpSelected");
+    acBtn1.classList.remove("acpSelected");
+    acBtn6.classList.remove("acpSelected");
+    acBtn7.classList.remove("acpSelected");
+}
+
+acBtn6.onclick = function accent1Red() {
+    acBtn6.classList.add("acpSelected");
+    acBtn2.classList.remove("acpSelected");
+    acBtn3.classList.remove("acpSelected");
+    acBtn4.classList.remove("acpSelected");
+    acBtn5.classList.remove("acpSelected");
+    acBtn1.classList.remove("acpSelected");
+    acBtn7.classList.remove("acpSelected");
+}
+
+acBtn7.onclick = function accent1Red() {
+    acBtn7.classList.add("acpSelected");
+    acBtn2.classList.remove("acpSelected");
+    acBtn3.classList.remove("acpSelected");
+    acBtn4.classList.remove("acpSelected");
+    acBtn5.classList.remove("acpSelected");
+    acBtn6.classList.remove("acpSelected");
+    acBtn1.classList.remove("acpSelected");
+}

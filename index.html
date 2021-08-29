@@ -60,25 +60,28 @@
             <div class="spwcSection spwcsAccentColor">
                 <p class="spwcsTitle">Pick an accent color:</p>
                 <div class="accColors">
-                    <div class="acPrev ac1" style="background-color: red;"></div>
-                    <div class="acPrev ac2" style="background-color: orange;"></div>
-                    <div class="acPrev ac3" style="background-color: yellow;"></div>
-                    <div class="acPrev ac4" style="background-color: green;"></div>
-                    <div class="acPrev ac5" style="background-color: blue;"></div>
-                    <div class="acPrev ac6" style="background-color: purple;"></div>
-                    <div class="acPrev ac7" style="background-color: pink;"></div>
+                    <div class="acPrev ac1" id="ac1Red" style="background-color: red;"></div>
+                    <div class="acPrev ac2" id="ac2Orange" style="background-color: orange;"></div>
+                    <div class="acPrev ac3" id="ac3Yellow" style="background-color: yellow;"></div>
+                    <div class="acPrev ac4" id="ac4Green" style="background-color: green;"></div>
+                    <div class="acPrev ac5" id="ac5Blue" style="background-color: blue;"></div>
+                    <div class="acPrev ac6" id="ac6Purple" style="background-color: purple;"></div>
+                    <div class="acPrev ac7" id="ac7Pink" style="background-color: pink;"></div>
                 </div>
             </div>
             <div class="spwcSection spwcsSplashImage">
                 <p class="spwcsTitle">Spotlight image:</p>
 
-                <label for="siUnsplash">
-                <input type="radio" id="siUnsplash" name="spotImgType" class="splashRadioBtn srbUnsplash" value="Unsplash daily">
-                Unsplash Daily Image</label>
+                <div class="siOptions">
+                    <label for="siUnsplash">
+                    <input type="radio" id="siUnsplash" name="spotImgType" class="splashRadioBtn srbUnsplash" value="Unsplash daily">
+                    Unsplash Daily Image</label>
+                    
+                    <label for="siCustom">
+                    <input type="radio" id="siCustom" name="spotImgType" class="splashRadioBtn srbCustom" value="Custom image">
+                    Custom Image</label>
+                </div>
 
-                <label for="siCustom">
-                <input type="radio" id="siCustom" name="spotImgType" class="splashRadioBtn srbCustom" value="Custom image">
-                Custom Image</label>
             </div>
         </div>
         </div>
