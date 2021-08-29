@@ -252,10 +252,12 @@
     transform: scale(.8);
     opacity: 0;
 
-    background-color: var(--page-background);
+    background-color: var(--modal-back);
     border-radius: 6px;
 
     transition: transform .2s, opacity .2s;
+
+    color: var(--font-color-2)
 }
 
 .spCloseBtn{
@@ -280,4 +282,65 @@
     position: absolute;
     right: -8%;
     z-index: 50;
+}
+
+/* Settings window content */
+
+.spwcAppTitle{
+    font-weight: 600;
+    font-size: 19px;
+
+    padding: 10px 20px;
+
+    display: flex;
+    align-items: center;
+
+    width: 90%;
+    height: 60px;
+}
+
+.spwcAppTitle p{
+    padding-left: 7px;
+
+    font-size: 14px;
+    opacity: .7;
+}
+
+.spwcSection{
+    width: 90%;
+    height: fit-content;
+
+    border-radius: 5px;
+    border: 1px solid var(--page-border);
+
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.spwcsTitle{
+    margin-inline: 0;
+    margin-block: 0;
+
+    font-size: 15px;
+    font-weight: 500;
+    opacity: .8;
+}
+
+.accColors{
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.acPrev{
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50px;
 }

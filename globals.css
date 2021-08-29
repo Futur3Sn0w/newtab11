@@ -4,6 +4,8 @@
         --page-background: rgb(249, 249, 249);
         --page-border: rgb(229, 229, 229);
 
+        --modal-back: rgb(255, 255, 255);
+
         --accent-color-1: purple;
 
         --font-color-1: rgb(134, 134, 134);
@@ -12,6 +14,7 @@
         --button-hover: rgb(234, 234, 234);
         --button-active: #FFF;
 
+        --search-back: rgb(243, 243, 243);
         --search-border: rgb(232, 232, 232);
         --search-border-bottom: rgb(207, 207, 207);
         --search-font-color: rgb(97, 97, 97);
@@ -28,8 +31,10 @@
 @media (prefers-color-scheme: dark){
     :root{
         --site-background: rgb(32, 32, 32);
-        --page-background: rgb(249, 249, 249);
+        --page-background: rgb(39, 39, 39);
         --page-border: rgb(29, 29, 29);
+
+        --modal-back: rgb(46, 46, 46);
 
         --accent-color-1: rgb(143, 69, 212);
 
@@ -39,14 +44,17 @@
         --button-hover: rgb(45, 45, 45);
         --button-active: rgb(69, 69, 69);
 
-        --search-border: rgb(232, 232, 232);
-        --search-border-bottom: rgb(207, 207, 207);
-        --search-font-color: rgb(97, 97, 97);
-        --search-font-focus: rgb(97, 97, 97);
+        --search-back: rgb(46, 46, 46);
+        --search-border: rgb(53, 53, 53);
+        --search-border-bottom: rgb(70, 70, 70);
+        --search-font-color: rgb(207, 207, 207);
+        --search-font-focus: rgb(255, 255, 255);
 
-        --menu-back: rgba(247, 247, 247, 0.8);
-        --menu-sep: rgba(0, 0, 0, 0.1);
-        --menu-btn: rgba(247, 247, 247, 0.4);
+        --menu-back: rgba(0, 0, 0, 0.8);
+        --menu-sep: rgba(255, 255, 255, 0.1);
+        --menu-btn: rgba(255, 255, 255, 0.2);
+        
+        --button-semitransp: rgba(0, 0, 0, 0.8);
     }
 }
 

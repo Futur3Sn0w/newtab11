@@ -50,6 +50,7 @@
     width: 50%;
     height: 60%;
 
+    background-color: var(--search-back);
     border-radius: 6px;
     border: 1px solid var(--search-border);
     border-bottom-color: var(--search-border-bottom);
