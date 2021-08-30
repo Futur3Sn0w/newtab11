@@ -1,3 +1,7 @@
+:root{
+    --accent-color-1: rgb(143, 69, 212);
+}
+
 @media (prefers-color-scheme: light){
     :root{
         --site-background: rgb(243, 243, 243);
@@ -5,8 +9,6 @@
         --page-border: rgb(229, 229, 229);
 
         --modal-back: rgba(255, 255, 255, 0.8);
-
-        --accent-color-1: purple;
 
         --font-color-1: rgb(134, 134, 134);
         --font-color-2: black;
@@ -35,8 +37,6 @@
         --page-border: rgb(29, 29, 29);
 
         --modal-back: rgba(46, 46, 46, 0.9);
-
-        --accent-color-1: rgb(143, 69, 212);
 
         --font-color-1: rgb(154, 154, 154);
         --font-color-2: white;

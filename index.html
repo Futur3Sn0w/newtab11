@@ -13,7 +13,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
 
-<body>
+<body onload="setColorOnLoad()">
 
     <section class="topNav">
         <div class="navIcon">Ă</div>
@@ -62,13 +62,40 @@
                     <div class="spwcSection spwcsAccentColor">
                         <p class="spwcsTitle">Pick an accent color:</p>
                         <div class="accColors">
-                            <div class="acPrev ac1" id="ac1Red" style="background-color: red;"></div>
-                            <div class="acPrev ac2" id="ac2Orange" style="background-color: orange;"></div>
-                            <div class="acPrev ac3" id="ac3Yellow" style="background-color: yellow;"></div>
-                            <div class="acPrev ac4" id="ac4Green" style="background-color: green;"></div>
-                            <div class="acPrev ac5" id="ac5Blue" style="background-color: blue;"></div>
-                            <div class="acPrev ac6" id="ac6Purple" style="background-color: purple;"></div>
-                            <div class="acPrev ac7" id="ac7Pink" style="background-color: pink;"></div>
+                            <label class="container">
+                                <input type="radio" class="acPrev" name="accentColor" id="ac1">
+                                <div class="checkmark" onclick="getColor(this)" style="background-color: rgb(209, 52, 56);"></div>
+                            </label>
+
+                            <label class="container">
+                                <input type="radio" class="acPrev" name="accentColor" id="ac2">
+                                <div class="checkmark" onclick="getColor(this)" style="background-color: rgb(247, 99, 12);"></div>
+                            </label>
+
+                            <label class="container">
+                                <input type="radio" class="acPrev" name="accentColor" id="ac3">
+                                <div class="checkmark" onclick="getColor(this)" style="background-color: rgb(255, 185, 0);"></div>
+                            </label>
+
+                            <label class="container">
+                                <input type="radio" class="acPrev" name="accentColor" id="ac4">
+                                <div class="checkmark" onclick="getColor(this)" style="background-color: rgb(16, 137, 62);"></div>
+                            </label>
+
+                            <label class="container">
+                                <input type="radio" class="acPrev" name="accentColor" id="ac5">
+                                <div class="checkmark" onclick="getColor(this)" style="background-color: rgb(0, 120, 212);"></div>
+                            </label>
+
+                            <label class="container">
+                                <input type="radio" class="acPrev" name="accentColor" id="ac6">
+                                <div class="checkmark" onclick="getColor(this)" style="background-color: rgb(116, 77, 169);"></div>
+                            </label>
+
+                            <label class="container">
+                                <input type="radio" class="acPrev" name="accentColor" id="ac7">
+                                <div class="checkmark" onclick="getColor(this)" style="background-color: rgb(227, 0, 140);"></div>
+                            </label>
                         </div>
                     </div>
                     <div class="spwcSection spwcsSplashImage">
@@ -78,7 +105,7 @@
                                 <input onchange="siCheckRadios()" type="radio" id="siUnsplash" name="spotImgType"
                                     class="splashRadioBtn srbUnsplash" value="Unsplash daily">
                                 Unsplash Daily Image</label>
-                            <input type="text" id="siUnsplashTags" value="water landscape" class="hidden">
+                            <input type="text" id="siUnsplashTags" placeholder="Water Landscape" value="water landscape" class="hidden">
 
                             <label for="siUnsplash">
                                 <input onchange="siCheckRadios()" type="radio" id="siWindows" name="spotImgType"

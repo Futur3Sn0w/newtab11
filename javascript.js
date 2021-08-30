@@ -71,85 +71,21 @@ function closeSettings() {
 }
 
 // Settings control
+let root = document.documentElement;
 
-const acBtn1 = document.getElementById("ac1Red");
-const acBtn2 = document.getElementById("ac2Orange");
-const acBtn3 = document.getElementById("ac3Yellow");
-const acBtn4 = document.getElementById("ac4Green");
-const acBtn5 = document.getElementById("ac5Blue");
-const acBtn6 = document.getElementById("ac6Purple");
-const acBtn7 = document.getElementById("ac7Pink");
-
-acBtn1.onclick = function accent1Red() {
-    acBtn1.classList.add("acpSelected");
-    acBtn2.classList.remove("acpSelected");
-    acBtn3.classList.remove("acpSelected");
-    acBtn4.classList.remove("acpSelected");
-    acBtn5.classList.remove("acpSelected");
-    acBtn6.classList.remove("acpSelected");
-    acBtn7.classList.remove("acpSelected");
+function getColor(element) {
+    var bgColor = $(element).css('background-color');
+    root.style.setProperty('--accent-color-1', bgColor);
+    document.cookie = "accentColor=" + bgColor;
 }
 
-acBtn2.onclick = function accent1Red() {
-    acBtn2.classList.add("acpSelected");
-    acBtn1.classList.remove("acpSelected");
-    acBtn3.classList.remove("acpSelected");
-    acBtn4.classList.remove("acpSelected");
-    acBtn5.classList.remove("acpSelected");
-    acBtn6.classList.remove("acpSelected");
-    acBtn7.classList.remove("acpSelected");
+function setColorOnLoad(){
+    const accColorCookie = document.cookie
+        .split('; ')
+        .find(row => row.startsWith('accentColor='))
+        .split('=')[1];
+    root.style.setProperty('--accent-color-1', accColorCookie)
 }
-
-acBtn3.onclick = function accent1Red() {
-    acBtn3.classList.add("acpSelected");
-    acBtn2.classList.remove("acpSelected");
-    acBtn1.classList.remove("acpSelected");
-    acBtn4.classList.remove("acpSelected");
-    acBtn5.classList.remove("acpSelected");
-    acBtn6.classList.remove("acpSelected");
-    acBtn7.classList.remove("acpSelected");
-}
-
-acBtn4.onclick = function accent1Red() {
-    acBtn4.classList.add("acpSelected");
-    acBtn2.classList.remove("acpSelected");
-    acBtn3.classList.remove("acpSelected");
-    acBtn1.classList.remove("acpSelected");
-    acBtn5.classList.remove("acpSelected");
-    acBtn6.classList.remove("acpSelected");
-    acBtn7.classList.remove("acpSelected");
-}
-
-acBtn5.onclick = function accent1Red() {
-    acBtn5.classList.add("acpSelected");
-    acBtn2.classList.remove("acpSelected");
-    acBtn3.classList.remove("acpSelected");
-    acBtn4.classList.remove("acpSelected");
-    acBtn1.classList.remove("acpSelected");
-    acBtn6.classList.remove("acpSelected");
-    acBtn7.classList.remove("acpSelected");
-}
-
-acBtn6.onclick = function accent1Red() {
-    acBtn6.classList.add("acpSelected");
-    acBtn2.classList.remove("acpSelected");
-    acBtn3.classList.remove("acpSelected");
-    acBtn4.classList.remove("acpSelected");
-    acBtn5.classList.remove("acpSelected");
-    acBtn1.classList.remove("acpSelected");
-    acBtn7.classList.remove("acpSelected");
-}
-
-acBtn7.onclick = function accent1Red() {
-    acBtn7.classList.add("acpSelected");
-    acBtn2.classList.remove("acpSelected");
-    acBtn3.classList.remove("acpSelected");
-    acBtn4.classList.remove("acpSelected");
-    acBtn5.classList.remove("acpSelected");
-    acBtn6.classList.remove("acpSelected");
-    acBtn1.classList.remove("acpSelected");
-}
-
 
 //#region spotlight orange
 
