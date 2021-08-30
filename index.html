@@ -13,7 +13,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
 
-<body onload="setColorOnLoad()">
+<body onload="OnLoad()">
 
     <section class="topNav">
         <div class="navIcon">Ă</div>
@@ -23,14 +23,14 @@
             onkeydown="if (event.keyCode == 13 || event.which == 13) { location='http://www.google.com/search?q=' + encodeURIComponent(document.getElementById('searchField').value);}"
             onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search the web'">
         <div class="profile" id="profButton">
-            <img src="prof.jpg" class="tnProfIcon" id="profIconBtn">
+            <img src="prof.png" class="tnProfIcon" id="profIconBtn">
             <div class="profMenu" id="profMenu">
                 <div class="pmAboutMe">
-                    <img src="prof.jpg" class="pmamProfIcon">
+                    <img src="prof.png" class="pmamProfIcon">
                     <div class="pmamText">
-                        <div class="ptName">Adam Hurd</div>
-                        <div class="ptEmail">futur3sn0w@outlook.com</div>
-                        <div class="ptEdit">Change my info</div>
+                        <div class="ptName" id="ptName">User</div>
+                        <div class="ptEmail" id="ptEmail">@User</div>
+                        <div class="ptEdit" id="settingsBtn2">Change my info</div>
                     </div>
                 </div>
                 <div class="pmSettingsBtn" id="settingsBtn"><p>Settings</p>
@@ -57,8 +57,7 @@
             <div class="spWindow" id="spWindow">
                 <div class="spCloseBtn" onclick="closeSettings()"></div>
                 <div class="spwContent">
-                    <div class="spwcAppTitle">Page settings<p>PREVIEW</p>
-                    </div>
+                    <div class="spwcAppTitle">Page settings<p>PREVIEW</p></div>
                     <div class="spwcSection spwcsAccentColor">
                         <p class="spwcsTitle">Pick an accent color:</p>
                         <div class="accColors">
@@ -117,6 +116,16 @@
                                     class="splashRadioBtn srbCustom" value="Custom image">
                                 Custom Image</label>
                         </div>
+                    </div>
+                    <div class="spwcSection spwcsPersonalInfo">
+                        <p class="spwcsTitle">Personal Info:
+                            <span>Your information is NOT shared outside of your computer. All data is stored locally on your system.</span>
+                        </p>
+                    <div class="spwcsSubtitle" id="spwcsSubtitle">Changes saved</div>
+                    <label>Your name:</label>
+                        <input type="text" id="piTBName" class="piTextBox pitbName" placeholder="John Doe" id="piName">
+                    <label>Your email/user name:</label>
+                        <input type="text" id="piTBEmail" class="piTextBox pitbEmail" placeholder="john.doe@contoso.com" id="piEmail">
                     </div>
                 </div>
         </section>

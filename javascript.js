@@ -8,9 +8,12 @@ const profMenu = document.getElementById("profMenu");
 const profIcn = document.getElementById("profIconBtn");
 
 const settingsBtn = document.getElementById("settingsBtn");
+const settingsBtn2 = document.getElementById("settingsBtn2");
 const settingsPane = document.getElementById("settingsPanel");
 const settingsBackdrop = document.getElementById("spBackdrop");
 const settingsWindow = document.getElementById("spWindow");
+
+const piSubt = document.getElementById("spwcsSubtitle");
 
 var unsplashTags = "water landscape"
 
@@ -63,28 +66,60 @@ settingsBtn.onclick = function () {
     settingsBackdrop.style.opacity = "1";
 }
 
+settingsBtn2.onclick = function () {
+    settingsPane.style.zIndex = 50;
+    settingsWindow.style.transform = "scale(1)";
+    settingsWindow.style.opacity = "1";
+    settingsBackdrop.style.opacity = "1";
+}
+
 function closeSettings() {
     settingsWindow.style.transform = "scale(.8)";
     settingsWindow.style.opacity = "0"
     settingsBackdrop.style.opacity = "0";
     settingsPane.style.zIndex = -50;
+
+    piSubt.style.opacity = "0";
+
+    menuName.innerHTML = localStorage['piName'];
+    menuEmail.innerHTML = localStorage['piEmail'];
 }
 
 // Settings control
 let root = document.documentElement;
+const piTB1 = document.getElementById("piTBName");
+const piTB2 = document.getElementById("piTBEmail");
+const menuName = document.getElementById("ptName");
+const menuEmail = document.getElementById("ptEmail");
 
 function getColor(element) {
     var bgColor = $(element).css('background-color');
     root.style.setProperty('--accent-color-1', bgColor);
-    document.cookie = "accentColor=" + bgColor;
+    localStorage['accentColor'] = bgColor;
 }
 
-function setColorOnLoad(){
-    const accColorCookie = document.cookie
-        .split('; ')
-        .find(row => row.startsWith('accentColor='))
-        .split('=')[1];
-    root.style.setProperty('--accent-color-1', accColorCookie)
+function OnLoad(){
+    root.style.setProperty('--accent-color-1', localStorage['accentColor']);
+
+    menuName.innerHTML = localStorage['piName'];
+    menuEmail.innerHTML = localStorage['piEmail'];
+
+    piTB1.value = localStorage['piName'];
+    piTB2.value = localStorage['piEmail'];
+}
+
+piTB1.onkeyup = function () {
+    piSubt.style.opacity = "1";
+    localStorage['piName'] = piTB1.value;
+
+    menuName.innerHTML = localStorage['piName'];
+}
+
+piTB2.onkeyup = function () {
+    piSubt.style.opacity = "1";
+    localStorage['piEmail'] = piTB2.value;
+
+    menuEmail.innerHTML = localStorage['piEmail'];
 }
 
 //#region spotlight orange

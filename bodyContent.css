@@ -286,7 +286,7 @@
     z-index: 50;
 }
 
-/* Settings window content */
+/* Settings - Meta */
 
 .spwcAppTitle{
     font-weight: 600;
@@ -298,7 +298,7 @@
     align-items: center;
 
     width: 90%;
-    height: 60px;
+    height: 50px;
 }
 
 .spwcAppTitle p{
@@ -334,6 +334,8 @@
     opacity: .8;
 }
 
+/* Settings - Splash Image */
+
 .siOptions{
     display: flex;
     flex-direction: column;
@@ -345,6 +347,7 @@
     height: 20px;
 
     margin: 7px 3px;
+    padding-left: 7px;
 
     border: 1px solid var(--search-border);
     border-bottom: 1px solid var(--search-border-bottom);
@@ -361,6 +364,8 @@
 #siUnsplashTags:focus{
     border-bottom: 2px solid var(--accent-color-1);
 }
+
+/* Settings - Accent Color */
 
 .accColors{
     display: flex;
@@ -399,4 +404,87 @@
 
 .container input:checked ~ .checkmark {
     border: 2px solid var(--font-color-2);
+}
+
+/* Settings - Personal Info */
+
+.piTextBox{
+    width: 23ch;
+    height: 20px;
+
+    margin: 5px 0;
+    padding-left: 7px;
+
+    border: 1px solid var(--search-border);
+    border-bottom: 1px solid var(--search-border-bottom);
+    color: var(--search-font-focus);
+
+    font-family: 'Segoe UI';
+
+    outline: none;
+    border-radius: 5px;
+
+    background-color: var(--search-back);
+}
+
+.piTextBox:focus{
+    border-bottom: 2px solid var(--accent-color-1);
+}
+
+.spwcsPersonalInfo .spwcsTitle{
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.spwcsPersonalInfo .spwcsTitle::after{
+    content: "";
+    font-family: FLNTREG;
+    opacity: .5;
+    margin-left: 5px;
+}
+
+.spwcsTitle span{
+    background-color: var(--button-semitransp);
+    backdrop-filter: blur(8px);
+
+    transform: scale(.7);
+    transform-origin: top left;
+    opacity: 0;
+
+    transition: .2s opacity .5s, .1s transform .5s;
+
+    font-size: 12px;
+    font-weight: 400;
+
+    position: absolute;
+    left: 102%;
+    user-select: none;
+
+    width: 200px;
+    padding: 6px 10px;
+
+    border-radius: 5px;
+}
+
+.spwcsTitle:hover span{
+    transform: scale(1);
+    opacity: 1;
+}
+
+.spwcsSubtitle{
+    position: absolute;
+    right: 35px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    user-select: none;
+    opacity: 0;
+
+    transition: opacity .2s;
+}
+
+.spwcsPersonalInfo label{
+    font-size: 13px;
+    font-weight: 500;
 }
