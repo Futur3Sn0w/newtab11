@@ -5,7 +5,7 @@
 @media (prefers-color-scheme: light){
     :root{
         --site-background: rgb(243, 243, 243);
-        --page-background: rgb(249, 249, 249);
+        --page-background: rgb(240, 240, 240);
         --page-border: rgb(229, 229, 229);
 
         --modal-back: rgba(255, 255, 255, 0.8);
@@ -16,7 +16,7 @@
         --button-hover: rgb(234, 234, 234);
         --button-active: #FFF;
 
-        --search-back: rgb(243, 243, 243);
+        --search-back: rgb(250, 250, 250);
         --search-border: rgb(232, 232, 232);
         --search-border-bottom: rgb(207, 207, 207);
         --search-font-color: rgb(97, 97, 97);

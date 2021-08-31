@@ -15,6 +15,8 @@ const settingsWindow = document.getElementById("spWindow");
 
 const piSubt = document.getElementById("spwcsSubtitle");
 
+const spotlight = document.getElementById("csImage");
+
 var unsplashTags = "water landscape"
 
 btnRight.onclick = function () {
@@ -83,6 +85,25 @@ function closeSettings() {
 
     menuName.innerHTML = localStorage['piName'];
     menuEmail.innerHTML = localStorage['piEmail'];
+}
+
+// Reveal Effect Area Control
+
+const circle = document.getElementById("reArea");
+
+const onMouseMove = (e) =>{
+    circle.style.left = e.pageX + 'px';
+    circle.style.top = e.pageY + 'px';
+  }
+
+document.addEventListener('mousemove', onMouseMove);
+
+spotlight.onmouseleave = function () {
+    circle.style.opacity = "0";
+}
+
+spotlight.onmouseenter = function () {
+    circle.style.opacity = "1";
 }
 
 // Settings control
