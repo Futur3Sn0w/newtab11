@@ -33,8 +33,8 @@
                         <div class="ptEdit" id="settingsBtn2">Change my info</div>
                     </div>
                 </div>
-                <div class="pmSettingsBtn" id="settingsBtn"><p>Settings</p>
-                </div>
+                <div class="pmSettingsBtn" id="settingsBtn"><p>Settings</p></div>
+                <div class="pmSettingsBtn" id="newTileBtn"><p>Add New Tile</p></div>
             </div>
         </div>
     </section>
@@ -128,6 +128,32 @@
                         <input type="text" id="piTBEmail" class="piTextBox pitbEmail" placeholder="john.doe@contoso.com" id="piEmail">
                     </div>
                 </div>
+            </div>
+            <div class="spWindow" id="spWindowNT">
+                <div class="spCloseBtn" id="ntWindowClose" onclick="closeSettings()"></div>
+                <div class="spwContent">
+                    <div class="spwcAppTitle" id="ntWindowTitle">Add new tile<p>PREVIEW</p></div>
+                    <div class="spwcSection spwcsNTSpecs">
+                        <p class="ntTitle newTileName">Name:</p>
+                            <input type="text" id="ntName" placeholder="Google" class="newTileTextbox">
+                            <p class="ntTitle newTileURL">URL: *</p>
+                            <input type="text" id="ntURL" onkeydown="if (event.keyCode == 13 || event.which == 13) {updateNewTilePrev();}" placeholder="https://www.google.com" class="newTileTextbox">
+                            <button value="Update Preview" onclick="updateNewTilePrev()" class="ntUpdPrev" id="ntUpdPrev"></button>
+                    </div>
+                    <div class="spwcSection spwcsNTPrev">
+                        <p class="spwcsTitle">Tile Preview:</p>
+
+                        <a id="newTilePreview" class="chbTile chbTileCustom chbTilePreview" data-chbtSiteName="Google">
+                            <img src="https://besticon-demo.herokuapp.com/icon?url=google.com&size=80..120..200"
+                                class="chbTileIconBlur" id="chbPrevIcnBlur">
+                            <img src="https://besticon-demo.herokuapp.com/icon?url=google.com&size=80..120..200"
+                                class="chbTileIcon" id="chbPrevIcn">
+                            <div class="chbGrad"></div>
+                        </a>
+                        <span>*You must type a URL to update the preview icon.</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <div class="cLabel">Home</div>
@@ -138,28 +164,6 @@
             <div class="chBoardwalk" id="boardwalk">
                 <div class="scrollBtn sbEnd" id="bwLeft"></div>
                 <div class="scrollBtn sbStart" id="bwRight"></div>
-                <!--
-                <a href="https://www.feedly.com" class="chbTile chbTab1" data-chbtSiteName="Feedly">
-                    <div class="chbGrad"></div>
-                </a>
-                <a href="https://www.twitter.com" class="chbTile chbTab2" data-chbtSiteName="Twitter">
-                    <div class="chbGrad"></div>
-                </a>
-                <a href="https://www.youtube.com" class="chbTile chbTab3" data-chbtSiteName="YouTube">
-                    <div class="chbGrad"></div>
-                </a>
-                <a href="https://www.reddit.com" class="chbTile chbTab4" data-chbtSiteName="Reddit">
-                    <div class="chbGrad"></div>
-                </a>
-                <a href="https://www.deviantart.com" class="chbTile chbTab5" data-chbtSiteName="DeviantArt">
-                    <div class="chbGrad"></div>
-                </a>
-                <a href="https://www.netflix.com" class="chbTile chbTab6" data-chbtSiteName="Netflix">
-                    <div class="chbGrad"></div>
-                </a>
-                <a href="https://www.amazon.com/Amazon-Video/b?ie=UTF8&node=2858778011&ref_=nav_custrec_signin&" class="chbTile chbTab7" data-chbtSiteName="Amazon Prime Video">
-                    <div class="chbGrad"></div>
-                </a>-->
 
                 <a href="https://osekai.net" class="chbTile chbTileCustom" data-chbtSiteName="Osekai">
                     <img src="https://osekai.net/eclipse/global/img/branding/vector/osekai_dark.svg"
@@ -197,6 +201,14 @@
                 </a>
 
                 <a href="https://www.twitter.com" class="chbTile chbTileCustom" data-chbtSiteName="Twitter">
+                    <img src="https://abs.twimg.com/responsive-web/client-web/icon-ios.b1fc7275.png"
+                        class="chbTileIconBlur">
+                    <img src="https://abs.twimg.com/responsive-web/client-web/icon-ios.b1fc7275.png"
+                        class="chbTileIcon">
+                    <div class="chbGrad"></div>
+                </a>
+
+                <a href="https://www.twitter.com" class="chbTile chbTileCustom chbNewPinTile" data-chbtSiteName="New Pin">
                     <img src="https://abs.twimg.com/responsive-web/client-web/icon-ios.b1fc7275.png"
                         class="chbTileIconBlur">
                     <img src="https://abs.twimg.com/responsive-web/client-web/icon-ios.b1fc7275.png"

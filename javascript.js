@@ -13,6 +13,10 @@ const settingsPane = document.getElementById("settingsPanel");
 const settingsBackdrop = document.getElementById("spBackdrop");
 const settingsWindow = document.getElementById("spWindow");
 
+const newTileBtn = document.getElementById("newTileBtn");
+const newTileWindow = document.getElementById("spWindowNT");
+const newTileUpdBtn = document.getElementById("ntUpdPrev");
+
 const piSubt = document.getElementById("spwcsSubtitle");
 
 const spotlight = document.getElementById("csImage");
@@ -27,7 +31,17 @@ btnLeft.onclick = function () {
     document.getElementById('boardwalk').scrollLeft -= 230;
 };
 
-profBtn.onclick = function showHideProfMenu() {
+profBtn.onclick = function () {
+    if (profMenu.style.transform = "scale(0)") {
+        profMenu.style.transform = "scale(1)";
+        profMenu.style.opacity = "1";
+    } else {
+        profMenu.style.transform = "scale(0)";
+        profMenu.style.opacity = "0";
+    }
+}
+
+function showHideProfMenu() {
     if (profMenu.style.transform = "scale(0)") {
         profMenu.style.transform = "scale(1)";
         profMenu.style.opacity = "1";
@@ -65,14 +79,42 @@ settingsBtn.onclick = function () {
     settingsPane.style.zIndex = 50;
     settingsWindow.style.transform = "scale(1)";
     settingsWindow.style.opacity = "1";
+    settingsWindow.style.zIndex = "51";
     settingsBackdrop.style.opacity = "1";
+
+    newTileWindow.style.transform = "scale(.8)";
+    newTileWindow.style.opacity = "0";
+    newTileWindow.style.zIndex = "50";
+
+    showHideProfMenu();
 }
 
 settingsBtn2.onclick = function () {
     settingsPane.style.zIndex = 50;
     settingsWindow.style.transform = "scale(1)";
     settingsWindow.style.opacity = "1";
+    settingsWindow.style.zIndex = "51";
     settingsBackdrop.style.opacity = "1";
+
+    newTileWindow.style.transform = "scale(.8)";
+    newTileWindow.style.opacity = "0";
+    newTileWindow.style.zIndex = "50";
+
+    showHideProfMenu();
+}
+
+newTileBtn.onclick = function () {
+    settingsPane.style.zIndex = 50;
+    newTileWindow.style.transform = "scale(1)";
+    newTileWindow.style.opacity = "1";
+    newTileWindow.style.zIndex = "51";
+
+    settingsWindow.style.zIndex = "50";
+    settingsBackdrop.style.opacity = "1";
+    settingsWindow.style.transform = "scale(.8)";
+    settingsWindow.style.opacity = "0"
+
+    showHideProfMenu();
 }
 
 function closeSettings() {
@@ -80,6 +122,10 @@ function closeSettings() {
     settingsWindow.style.opacity = "0"
     settingsBackdrop.style.opacity = "0";
     settingsPane.style.zIndex = -50;
+
+    newTileWindow.style.transform = "scale(.8)";
+    newTileWindow.style.opacity = "0";
+
 
     piSubt.style.opacity = "0";
 
@@ -141,6 +187,21 @@ piTB2.onkeyup = function () {
     localStorage['piEmail'] = piTB2.value;
 
     menuEmail.innerHTML = localStorage['piEmail'];
+}
+
+// New Tile .... stuff
+
+const newTilePrev = document.getElementById("newTilePreview");
+const ntNameBox = document.getElementById("ntName");
+const ntURLBox = document.getElementById("ntURL");
+
+const prevIcon = document.getElementById("chbPrevIcn");
+const prevIconBlur = document.getElementById("chbPrevIcnBlur");
+
+function updateNewTilePrev() {
+    newTilePrev.setAttribute("data-chbtSiteName", ntNameBox.value);
+    prevIcon.src = "https://besticon-demo.herokuapp.com/icon?url=" + ntURLBox.value + "&size=48..120..128";
+    prevIconBlur.src = "https://besticon-demo.herokuapp.com/icon?url=" + ntURLBox.value + "&size=48..120..128";
 }
 
 //#region spotlight orange

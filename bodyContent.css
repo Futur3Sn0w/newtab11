@@ -49,7 +49,7 @@
     z-index: 1;
 
     background-color: rgba(255, 255, 255, 0.2);
-    filter: blur(100px);
+    filter: blur(80px);
 
     transition: opacity 1s;
 }
@@ -149,7 +149,7 @@
 
     transition: opacity .2s, bottom .3s;
 
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+    background: linear-gradient(transparent, rgba(0, 0, 0, 1));
 }
 
 .chbTileIconBlur{
@@ -187,11 +187,16 @@
     filter: drop-shadow(0px 2px 8px #0004);
 }
 
+.chbNewPinTile{
+    display: none;
+}
+
 .scrollBtn{
     width: 20px;
     height: 40px;
 
     background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(10px);
     border-radius: 4px;
 
     color: white;
@@ -265,7 +270,7 @@
     max-width: 700px;
     height: 500px;
 
-    position: relative;
+    position: absolute;
     z-index: 50;
 
     transform: scale(.8);
@@ -505,4 +510,103 @@
 .spwcsPersonalInfo label{
     font-size: 13px;
     font-weight: 500;
+}
+
+/* New Tile modal */
+
+.spwcsNTPrev, 
+.spwcsNTSpecs{
+    width: 270px !important;
+    margin: 10px 15px;
+}
+
+.spwcsNTSpecs{
+    margin-top: 0;
+}
+
+#spWindowNT{
+    min-width: 200px !important;
+    width: fit-content;
+    height: fit-content;
+}
+
+#ntWindowTitle{
+    width: fit-content;
+    height: fit-content;
+    margin: 0;
+    padding: 5px 20px;
+}
+
+#ntWindowClose{
+    right: -50px;
+}
+
+.ntTitle{
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.newTileName{
+    margin-top: 3px;
+}
+
+.newTileTextbox{
+    width: 23ch;
+    height: 23px;
+
+    margin: 0;
+    padding-left: 5px;
+
+    border: 1px solid var(--search-border);
+    border-bottom: 1px solid var(--search-border-bottom);
+    color: var(--search-font-focus);
+
+    font-family: 'Segoe UI';
+
+    outline: none;
+    border-radius: 5px;
+
+    background-color: var(--search-back);
+}
+
+.newTileTextbox:focus{
+    border-bottom: 2px solid var(--accent-color-1);
+}
+
+#ntURL{
+    width: 35ch;
+}
+
+.ntUpdPrev{
+    border: 1px solid var(--search-border);
+    border-radius: 5px;
+    background-color: var(--button-hover);
+    color: var(--font-color-2);
+
+    padding: 5px 10px;
+
+    font-family: 'Segoe UI';
+    font-weight: 500;
+
+    margin-left: auto;
+    margin-top: 10px;
+
+    transition: background-color .1s;
+}
+
+.ntUpdPrev:hover{
+    background-color: var(--button-active);
+}
+
+.ntUpdPrev::after{
+    content: "Update Preview";
+}
+
+.chbTilePreview{
+    margin-top: 10px;
+}
+
+.spwcsNTPrev span{
+    font-size: 12px;
+    margin-top: 12px;
 }
