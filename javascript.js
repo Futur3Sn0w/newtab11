@@ -126,12 +126,39 @@ function closeSettings() {
     newTileWindow.style.transform = "scale(.8)";
     newTileWindow.style.opacity = "0";
 
+    prevIcon.src = "https://besticon-demo.herokuapp.com/icon?url=google.com&size=80..120..200";
+    prevIconBlur.src = "https://besticon-demo.herokuapp.com/icon?url=google.com&size=80..120..200";
+    ntNameBox.value = "";
+    ntURLBox.value = "";
 
     piSubt.style.opacity = "0";
 
     menuName.innerHTML = localStorage['piName'];
     menuEmail.innerHTML = localStorage['piEmail'];
 }
+
+// Upload+Save User Image
+
+const navProfIcon = document.getElementById("profIconBtn");
+const menuProfIcon = document.getElementById("pmamProfIcon");
+
+document.getElementById('avatarUpload').addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      // convert file to base64 String
+      const base64String = reader.result.replace('data:', '').replace(/^.+,/, '');
+      // store file
+      localStorage.setItem('userImage', base64String);
+      // display image
+      navProfIcon.style.backgroundImage = `url(data:image/png;base64,${base64String})`;
+      menuProfIcon.style.backgroundImage = `url(data:image/png;base64,${base64String})`;
+    };
+    reader.readAsDataURL(file);
+});
+
+    navProfIcon.style.backgroundImage = `url(data:image/png;base64,${localStorage['userImage']})`;
+    menuProfIcon.style.backgroundImage = `url(data:image/png;base64,${localStorage['userImage']})`;
 
 // Reveal Effect Area Control
 

@@ -186,11 +186,6 @@
     align-items: center;
     filter: drop-shadow(0px 2px 8px #0004);
 }
-
-.chbNewPinTile{
-    display: none;
-}
-
 .scrollBtn{
     width: 20px;
     height: 40px;
@@ -268,7 +263,7 @@
     width: 70%;
     min-width: 550px;
     max-width: 700px;
-    height: 500px;
+    height: fit-content;
 
     position: absolute;
     z-index: 50;
@@ -336,7 +331,7 @@
     height: fit-content;
 
     border-radius: 5px;
-    border: 1px solid var(--page-border);
+    border: 1px solid var(--modal-section-border);
 
     margin: 0 auto;
     margin-bottom: 10px;
@@ -524,6 +519,10 @@
     margin-top: 0;
 }
 
+.spwcsNTPrev{
+    margin-bottom: 0;
+}
+
 #spWindowNT{
     min-width: 200px !important;
     width: fit-content;
@@ -577,13 +576,13 @@
     width: 35ch;
 }
 
-.ntUpdPrev{
+.ntActionBtn{
     border: 1px solid var(--search-border);
     border-radius: 5px;
-    background-color: var(--button-hover);
+    background-color: var(--button-rest);
     color: var(--font-color-2);
 
-    padding: 5px 10px;
+    padding: 7px 12px;
 
     font-family: 'Segoe UI';
     font-weight: 500;
@@ -594,12 +593,25 @@
     transition: background-color .1s;
 }
 
-.ntUpdPrev:hover{
-    background-color: var(--button-active);
+.ntActionBtn:hover{
+    background-color: var(--button-hover);
 }
 
-.ntUpdPrev::after{
-    content: "Update Preview";
+.ntActionBtn::after{
+    content: attr(data-ntBtnLbl);
+}
+
+#ntCommitTile{
+    background-color: var(--button-accent-rest);
+    color: white;
+}
+
+#ntCommitTile:hover{
+    background-color: var(--button-accent-hover);
+}
+
+#ntCancelAdd{
+    font-weight: 400;
 }
 
 .chbTilePreview{
@@ -609,4 +621,11 @@
 .spwcsNTPrev span{
     font-size: 12px;
     margin-top: 12px;
+}
+
+.ntActionBtns{
+    margin-left: auto;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    width: fit-content;
 }

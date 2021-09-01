@@ -23,10 +23,10 @@
             onkeydown="if (event.keyCode == 13 || event.which == 13) { location='http://www.google.com/search?q=' + encodeURIComponent(document.getElementById('searchField').value);}"
             onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search the web'">
         <div class="profile" id="profButton">
-            <img src="prof.png" class="tnProfIcon" id="profIconBtn">
+            <div class="tnProfIcon" id="profIconBtn"></div>
             <div class="profMenu" id="profMenu">
                 <div class="pmAboutMe">
-                    <img src="prof.png" class="pmamProfIcon">
+                    <div class="pmamProfIcon" id="pmamProfIcon"></div>
                     <div class="pmamText">
                         <div class="ptName" id="ptName">User</div>
                         <div class="ptEmail" id="ptEmail">@User</div>
@@ -126,6 +126,8 @@
                         <input type="text" id="piTBName" class="piTextBox pitbName" placeholder="John Doe" id="piName">
                     <label>Your email/user name:</label>
                         <input type="text" id="piTBEmail" class="piTextBox pitbEmail" placeholder="john.doe@contoso.com" id="piEmail">
+                    <label>Profile Image:</label>
+                        <input type="file" id="avatarUpload" name="avatar" accept="image/png, image/jpeg">
                     </div>
                 </div>
             </div>
@@ -138,7 +140,7 @@
                             <input type="text" id="ntName" placeholder="Google" class="newTileTextbox">
                             <p class="ntTitle newTileURL">URL: *</p>
                             <input type="text" id="ntURL" onkeydown="if (event.keyCode == 13 || event.which == 13) {updateNewTilePrev();}" placeholder="https://www.google.com" class="newTileTextbox">
-                            <button value="Update Preview" onclick="updateNewTilePrev()" class="ntUpdPrev" id="ntUpdPrev"></button>
+                            <button data-ntBtnLbl="Update Preview" onclick="updateNewTilePrev()" class="ntActionBtn" id="ntUpdPrev"></button>
                     </div>
                     <div class="spwcSection spwcsNTPrev">
                         <p class="spwcsTitle">Tile Preview:</p>
@@ -151,6 +153,10 @@
                             <div class="chbGrad"></div>
                         </a>
                         <span>*You must type a URL to update the preview icon.</span>
+                    </div>
+                    <div class="ntActionBtns">
+                        <button data-ntBtnLbl="Cancel" onclick="closeSettings()" class="ntActionBtn" id="ntCancelAdd"></button>
+                        <button data-ntBtnLbl="Add Tile" onclick="" class="ntActionBtn" id="ntCommitTile"></button>
                     </div>
                 </div>
             </div>
@@ -201,14 +207,6 @@
                 </a>
 
                 <a href="https://www.twitter.com" class="chbTile chbTileCustom" data-chbtSiteName="Twitter">
-                    <img src="https://abs.twimg.com/responsive-web/client-web/icon-ios.b1fc7275.png"
-                        class="chbTileIconBlur">
-                    <img src="https://abs.twimg.com/responsive-web/client-web/icon-ios.b1fc7275.png"
-                        class="chbTileIcon">
-                    <div class="chbGrad"></div>
-                </a>
-
-                <a href="https://www.twitter.com" class="chbTile chbTileCustom chbNewPinTile" data-chbtSiteName="New Pin">
                     <img src="https://abs.twimg.com/responsive-web/client-web/icon-ios.b1fc7275.png"
                         class="chbTileIconBlur">
                     <img src="https://abs.twimg.com/responsive-web/client-web/icon-ios.b1fc7275.png"
