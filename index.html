@@ -10,18 +10,16 @@
     <link rel="stylesheet" href="globals.css">
     <link rel="stylesheet" href="navigation.css">
     <link rel="stylesheet" href="bodyContent.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="jquery.min.js" type="text/javascript"></script>
 </head>
 
-<body onload="OnLoad()">
+<body>
 
     <section class="topNav">
         <div class="navIcon">Ă</div>
         <div class="navTitle">New Tab <p>PREVIEW</p>
         </div>
-        <input type="text" class="searchField" id="searchField" placeholder="Search the web"
-            onkeydown="if (event.keyCode == 13 || event.which == 13) { location='http://www.google.com/search?q=' + encodeURIComponent(document.getElementById('searchField').value);}"
-            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search the web'">
+        <input type="text" class="searchField" id="searchField" placeholder="Search the web">
         <div class="profile" id="profButton">
             <div class="tnProfIcon" id="profIconBtn"></div>
             <div class="profMenu" id="profMenu">
@@ -53,9 +51,9 @@
 
     <section class="content">
         <section class="settingsPanel" id="settingsPanel">
-            <div class="spBackdrop" id="spBackdrop" onclick="closeSettings()"></div>
+            <div class="spBackdrop" id="spBackdrop"></div>
             <div class="spWindow" id="spWindow">
-                <div class="spCloseBtn" onclick="closeSettings()"></div>
+                <div class="spCloseBtn" id="spCloseBtn"></div>
                 <div class="spwContent">
                     <div class="spwcAppTitle">Page settings<p>PREVIEW</p></div>
                     <div class="spwcSection spwcsAccentColor">
@@ -63,37 +61,37 @@
                         <div class="accColors">
                             <label class="container">
                                 <input type="radio" class="acPrev" name="accentColor" id="ac1">
-                                <div class="checkmark" onclick="getColor(this)" style="background-color: rgb(209, 52, 56);"></div>
+                                <div class="checkmark" style="background-color: rgb(209, 52, 56);" id="acCheckbox7"></div>
                             </label>
 
                             <label class="container">
                                 <input type="radio" class="acPrev" name="accentColor" id="ac2">
-                                <div class="checkmark" onclick="getColor(this)" style="background-color: rgb(247, 99, 12);"></div>
+                                <div class="checkmark" style="background-color: rgb(247, 99, 12);" id="acCheckbox6"></div>
                             </label>
 
                             <label class="container">
                                 <input type="radio" class="acPrev" name="accentColor" id="ac3">
-                                <div class="checkmark" onclick="getColor(this)" style="background-color: rgb(255, 185, 0);"></div>
+                                <div class="checkmark" style="background-color: rgb(255, 185, 0);" id="acCheckbox5"></div>
                             </label>
 
                             <label class="container">
                                 <input type="radio" class="acPrev" name="accentColor" id="ac4">
-                                <div class="checkmark" onclick="getColor(this)" style="background-color: rgb(16, 137, 62);"></div>
+                                <div class="checkmark" style="background-color: rgb(16, 137, 62);" id="acCheckbox4"></div>
                             </label>
 
                             <label class="container">
                                 <input type="radio" class="acPrev" name="accentColor" id="ac5">
-                                <div class="checkmark" onclick="getColor(this)" style="background-color: rgb(0, 120, 212);"></div>
+                                <div class="checkmark" style="background-color: rgb(0, 120, 212);" id="acCheckbox3"></div>
                             </label>
 
                             <label class="container">
                                 <input type="radio" class="acPrev" name="accentColor" id="ac6">
-                                <div class="checkmark" onclick="getColor(this)" style="background-color: rgb(116, 77, 169);"></div>
+                                <div class="checkmark" style="background-color: rgb(116, 77, 169);" id="acCheckbox2"></div>
                             </label>
 
                             <label class="container">
                                 <input type="radio" class="acPrev" name="accentColor" id="ac7">
-                                <div class="checkmark" onclick="getColor(this)" style="background-color: rgb(227, 0, 140);"></div>
+                                <div class="checkmark" style="background-color: rgb(227, 0, 140);" id="acCheckbox1"></div>
                             </label>
                         </div>
                     </div>
@@ -101,18 +99,18 @@
                         <p class="spwcsTitle">Spotlight image:</p>
                         <div class="siOptions">
                             <label for="siUnsplash">
-                                <input onchange="siCheckRadios()" type="radio" id="siUnsplash" name="spotImgType"
+                                <input type="radio" id="siUnsplash" name="spotImgType"
                                     class="splashRadioBtn srbUnsplash" value="Unsplash daily">
                                 Unsplash Daily Image</label>
                             <input type="text" id="siUnsplashTags" placeholder="Water Landscape" value="water landscape" class="hidden">
 
                             <label for="siUnsplash">
-                                <input onchange="siCheckRadios()" type="radio" id="siWindows" name="spotImgType"
+                                <input type="radio" id="siWindows" name="spotImgType"
                                     class="splashRadioBtn srbUnsplash" value="Unsplash daily">
                                 Windows Spotlight</label>
 
                             <label for="siCustom">
-                                <input onchange="siCheckRadios()" type="radio" id="siCustom" name="spotImgType"
+                                <input type="radio" id="siCustom" name="spotImgType"
                                     class="splashRadioBtn srbCustom" value="Custom image">
                                 Custom Image</label>
                         </div>
@@ -132,15 +130,15 @@
                 </div>
             </div>
             <div class="spWindow" id="spWindowNT">
-                <div class="spCloseBtn" id="ntWindowClose" onclick="closeSettings()"></div>
+                <div class="spCloseBtn" id="ntWindowClose"></div>
                 <div class="spwContent">
                     <div class="spwcAppTitle" id="ntWindowTitle">Add new tile<p>PREVIEW</p></div>
                     <div class="spwcSection spwcsNTSpecs">
                         <p class="ntTitle newTileName">Name:</p>
                             <input type="text" id="ntName" placeholder="Google" class="newTileTextbox">
                             <p class="ntTitle newTileURL">URL: *</p>
-                            <input type="text" id="ntURL" onkeydown="if (event.keyCode == 13 || event.which == 13) {updateNewTilePrev();}" placeholder="https://www.google.com" class="newTileTextbox">
-                            <button data-ntBtnLbl="Update Preview" onclick="updateNewTilePrev()" class="ntActionBtn" id="ntUpdPrev"></button>
+                            <input type="text" id="ntURL" placeholder="https://www.google.com" class="newTileTextbox">
+                            <button data-ntBtnLbl="Update Preview" class="ntActionBtn" id="ntUpdPrev"></button>
                     </div>
                     <div class="spwcSection spwcsNTPrev">
                         <p class="spwcsTitle">Tile Preview:</p>
@@ -155,7 +153,7 @@
                         <span>*You must type a URL to update the preview icon.</span>
                     </div>
                     <div class="ntActionBtns">
-                        <button data-ntBtnLbl="Cancel" onclick="closeSettings()" class="ntActionBtn" id="ntCancelAdd"></button>
+                        <button data-ntBtnLbl="Cancel" class="ntActionBtn" id="ntCancelAdd"></button>
                         <button data-ntBtnLbl="Add Tile" onclick="" class="ntActionBtn" id="ntCommitTile"></button>
                     </div>
                 </div>

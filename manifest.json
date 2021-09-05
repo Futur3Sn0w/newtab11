@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "Boardwalk New Tab Page",
+    "version": "1.0",
+    "description": "Windows 11 Store-styled New Tab Page",
+    "author": "Studio30",
+    "chrome_url_overrides" : {
+      "newtab": "index.html"
+    },
+    "permissions": [
+      "storage",
+      "contextMenus",
+      "webNavigation",
+      "scripting",
+      "https://api.hackernoon.com/"
+    ],
+    "icons": {
+      "16": "icon16.png",
+      "32": "icon32.png",
+      "192": "icon192.png",
+      "512": "icon512.png"
+    }
+  }

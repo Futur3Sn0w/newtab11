@@ -11,17 +11,22 @@ const settingsBtn = document.getElementById("settingsBtn");
 const settingsBtn2 = document.getElementById("settingsBtn2");
 const settingsPane = document.getElementById("settingsPanel");
 const settingsBackdrop = document.getElementById("spBackdrop");
+const settingsCloseBtn = document.getElementById("spCloseBtn");
 const settingsWindow = document.getElementById("spWindow");
 
 const newTileBtn = document.getElementById("newTileBtn");
 const newTileWindow = document.getElementById("spWindowNT");
 const newTileUpdBtn = document.getElementById("ntUpdPrev");
+const newTileWindowClose = document.getElementById("ntWindowClose");
+const newTileCancelBtn = document.getElementById("ntCancelAdd");
 
 const piSubt = document.getElementById("spwcsSubtitle");
 
 const spotlight = document.getElementById("csImage");
 
 var unsplashTags = "water landscape"
+
+// Scrolling buttons
 
 btnRight.onclick = function () {
     document.getElementById('boardwalk').scrollLeft += 230;
@@ -30,6 +35,8 @@ btnRight.onclick = function () {
 btnLeft.onclick = function () {
     document.getElementById('boardwalk').scrollLeft -= 230;
 };
+
+// Profile menu functions
 
 profBtn.onclick = function () {
     if (profMenu.style.transform = "scale(0)") {
@@ -75,6 +82,8 @@ $(document).ready(function () {
     });
 });
 
+// Profile Menu Buttons
+
 settingsBtn.onclick = function () {
     settingsPane.style.zIndex = 50;
     settingsWindow.style.transform = "scale(1)";
@@ -117,6 +126,8 @@ newTileBtn.onclick = function () {
     showHideProfMenu();
 }
 
+// Closing things
+
 function closeSettings() {
     settingsWindow.style.transform = "scale(.8)";
     settingsWindow.style.opacity = "0"
@@ -135,6 +146,117 @@ function closeSettings() {
 
     menuName.innerHTML = localStorage['piName'];
     menuEmail.innerHTML = localStorage['piEmail'];
+}
+
+settingsCloseBtn.onclick = function () {
+    closeSettings();
+}
+
+settingsBackdrop.onclick = function () {
+    closeSettings();
+}
+
+newTileWindowClose.onclick = function () {
+    closeSettings();
+}
+
+newTileCancelBtn.onclick = function () {
+    closeSettings();
+}
+
+// Searchbar Functions
+
+searchField.onkeydown = function () {
+if (event.keyCode == 13 || event.which == 13) { 
+    location='http://www.google.com/search?q=' + encodeURIComponent(document.getElementById('searchField').value);
+}
+}
+
+searchField.onfocus = function () {
+    typeof globalThis;
+    this.placeholder = '';
+}
+
+searchField.onblur = function () {
+    typeof globalThis;
+    this.placeholder = 'Search the web';
+}
+
+// Tile Preview Functions
+
+const newTileURLBox = document.getElementById("ntURL");
+
+newTileURLBox.onkeydown = function () {
+    if (event.keyCode == 13 || event.which == 13) {
+        updateNewTilePrev();
+    }
+}
+
+newTileUpdBtn.onclick = function () {
+    updateNewTilePrev();
+}
+
+// checkRadios functions
+
+const siUnsplash = document.getElementById("siUnsplash");
+const siWindows = document.getElementById("siWindows");
+const siCustom = document.getElementById("siCustom");
+
+siUnsplash.onchange = function () {
+    siCheckRadios();
+}
+
+siWindows.onchange = function () {
+    siCheckRadios();
+}
+
+siCustom.onchange = function () {
+    siCheckRadios();
+}
+
+// Accent colors (this is gonna suck a$$)
+
+const ac7 = document.getElementById("acCheckbox7");
+const ac6 = document.getElementById("acCheckbox6");
+const ac5 = document.getElementById("acCheckbox5");
+const ac4 = document.getElementById("acCheckbox4");
+const ac3 = document.getElementById("acCheckbox3");
+const ac2 = document.getElementById("acCheckbox2");
+const ac1 = document.getElementById("acCheckbox1");
+
+ac1.onclick = function () {
+    typeof globalThis;
+    getColor(this);
+}
+
+ac2.onclick = function () {
+    typeof globalThis;
+    getColor(this);
+}
+
+ac3.onclick = function () {
+    typeof globalThis;
+    getColor(this);
+}
+
+ac4.onclick = function () {
+    typeof globalThis;
+    getColor(this);
+}
+
+ac5.onclick = function () {
+    typeof globalThis;
+    getColor(this);
+}
+
+ac6.onclick = function () {
+    typeof globalThis;
+    getColor(this);
+}
+
+ac7.onclick = function () {
+    typeof globalThis;
+    getColor(this);
 }
 
 // Upload+Save User Image
@@ -192,7 +314,7 @@ function getColor(element) {
     localStorage['accentColor'] = bgColor;
 }
 
-function OnLoad(){
+document.onload = function () {
     root.style.setProperty('--accent-color-1', localStorage['accentColor']);
 
     menuName.innerHTML = localStorage['piName'];
