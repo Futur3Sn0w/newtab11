@@ -42,8 +42,7 @@
     aspect-ratio: 1/1;
 
     border-radius: 50%;
-    transform: translate(-50%,-50%);
-
+    transform: translate(-65%,-60%);
 
     position: absolute;
     z-index: 1;
@@ -115,22 +114,22 @@
     opacity: 0;
 
     position: absolute;
-    bottom: -20px;
-    left: 15px;
+    bottom: 20px;
+    left: 0;
 
-    transition: bottom .3s, font-size .2s, opacity .4s;
+    transition: left .3s, font-size .2s, opacity .4s;
 
     z-index: 3;
 }
 
 .chbTile:hover::after{
-    bottom: 20px;
+    left: 15px;
     opacity: 1;
     font-size: 15px;
 }
 
 .chbTile:hover .chbGrad{
-    bottom: 0;
+    left: 0;
     opacity: 1;
 }
 
@@ -140,16 +139,17 @@
 
 .chbGrad{
     position: absolute;
-    bottom: -100%;
+    bottom: 0;
+    left: -100%;
 
     opacity: 0;
 
     width: 100%;
-    height: 40%;
+    height: 100%;
 
-    transition: opacity .2s, bottom .3s;
+    transition: opacity .2s, left .2s;
 
-    background: linear-gradient(transparent, rgba(0, 0, 0, 1));
+    background: linear-gradient(-90deg, transparent, rgba(0, 0, 0, .8));
 }
 
 .chbTileIconBlur{
@@ -229,6 +229,81 @@
 
 .sbStart::after{
     content: ""
+}
+
+/* First visit experience */
+
+.firstVisitSetup{
+    width: 100vw;
+    height: 100vh;
+
+    display: none;
+
+    padding: 3em;
+
+    position: absolute;
+    z-index: 1000;
+
+    background-color: var(--page-background);
+    color: var(--font-color-2);
+}
+
+.iHead{
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.iSubhead{
+    font-size: 30px;
+    opacity: .8;
+}
+
+.iSubhead2{
+    margin-top: 7px;
+}
+
+.fvsIntro{
+    margin-bottom: 40px;
+}
+
+.fvsSect{
+    width: calc(100% - 8em);
+    height: fit-content;
+
+    border: 1px solid var(--modal-section-border);
+    border-radius: 5px;
+
+    padding: 1em;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.fvsSect .spwcsTitle{
+    font-size: 20px;
+}
+
+.fvsSect .spwcsTitle span{
+    opacity: 1;
+    display: block;
+    position: unset;
+    transform: none;
+    transition: none;
+
+    width: fit-content;
+    padding: 0;
+}
+
+#fsw1{
+    font-size: 15px;
+}
+
+#fsw2{
+    margin-bottom: 15px;
+    margin-top: 6px;
+
+    opacity: .5;
 }
 
 /* Settings Window */

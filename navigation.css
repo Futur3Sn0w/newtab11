@@ -10,17 +10,19 @@
 }
 
 .navIcon{
-    height: 100%;
-    width: 75px;
+    height: 25px;
+    aspect-ratio: 1/1;
+
+    margin: 0 25px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    font-family: FLNTFILL;
-    font-size: 20px;
-
-    color: var(--font-color-2);
+    background-image: url(logos/icon48.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 .navTitle{

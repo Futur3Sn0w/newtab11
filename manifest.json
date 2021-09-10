@@ -11,13 +11,12 @@
       "storage",
       "contextMenus",
       "webNavigation",
-      "scripting",
-      "https://api.hackernoon.com/"
+      "scripting"
     ],
     "icons": {
-      "16": "icon16.png",
-      "32": "icon32.png",
-      "192": "icon192.png",
-      "512": "icon512.png"
+      "16": "logos/icon16.png",
+      "32": "logos/icon32.png",
+      "192": "logos/icon192.png",
+      "512": "logos/icon512.png"
     }
   }

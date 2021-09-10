@@ -314,15 +314,13 @@ function getColor(element) {
     localStorage['accentColor'] = bgColor;
 }
 
-document.onload = function () {
-    root.style.setProperty('--accent-color-1', localStorage['accentColor']);
+root.style.setProperty('--accent-color-1', localStorage['accentColor']);
 
-    menuName.innerHTML = localStorage['piName'];
-    menuEmail.innerHTML = localStorage['piEmail'];
+menuName.innerHTML = localStorage['piName'];
+menuEmail.innerHTML = localStorage['piEmail'];
 
-    piTB1.value = localStorage['piName'];
-    piTB2.value = localStorage['piEmail'];
-}
+piTB1.value = localStorage['piName'];
+piTB2.value = localStorage['piEmail'];
 
 piTB1.onkeyup = function () {
     piSubt.style.opacity = "1";
