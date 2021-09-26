@@ -32,6 +32,9 @@
         --menu-btn: rgba(0, 0, 0, 0.1);
 
         --button-semitransp: rgba(243, 243, 243, 0.8);
+
+        --setup-back: rgba(255, 255, 255, .9);
+        --bloom11: url(bloom/light.jpg);
     }
 }
 
@@ -62,6 +65,9 @@
         --menu-btn: rgba(255, 255, 255, 0.2);
         
         --button-semitransp: rgba(0, 0, 0, 0.8);
+
+        --setup-back: rgba(0, 0, 0, 0.8);
+        --bloom11: url(bloom/dark.jpg);
     }
 }
 

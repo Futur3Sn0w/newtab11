@@ -36,6 +36,67 @@ btnLeft.onclick = function () {
     document.getElementById('boardwalk').scrollLeft -= 230;
 };
 
+// Setup UI
+
+const oobeNext1 = document.getElementById("fiNextBtn");
+const oobeNext2 = document.getElementById("fp1NextBtn");
+const oobeNext3 = document.getElementById("fp2NextBtn");
+const oobeNext4 = document.getElementById("fp3NextBtn");
+const oobeFinish = document.getElementById("foNextBtn");
+
+const oobeWelcome = document.getElementById("fvsIntro");
+const oobePage1 = document.getElementById("fvsPanel1");
+const oobePage2 = document.getElementById("fvsPanel2");
+const oobePage3 = document.getElementById("fvsPanel3");
+const oobeOutro = document.getElementById("fvsOutro");
+
+oobeNext1.onclick = function () {
+    oobeWelcome.style.opacity = "0";
+    oobeWelcome.style.transform = "translateX(-30%)";
+    oobeWelcome.style.zIndex = "1000";
+
+    oobePage1.style.opacity = "1";
+    oobePage1.style.transform = "translateX(0)";
+    oobePage1.style.zIndex = "1002";
+}
+
+oobeNext2.onclick = function () {
+    oobePage1.style.opacity = "0";
+    oobePage1.style.transform = "translateX(-30%)";
+    oobePage1.style.zIndex = "1000";
+
+    oobePage2.style.opacity = "1";
+    oobePage2.style.transform = "translateX(0)";
+    oobePage2.style.zIndex = "1002";
+
+    localStorage['piName'] = piTB1.value;
+    menuName.innerHTML = localStorage['piName'];
+    localStorage['piEmail'] = piTB2.value;
+    menuEmail.innerHTML = localStorage['piEmail'];
+    piTB1.value = localStorage['piName'];
+    piTB2.value = localStorage['piEmail'];
+}
+
+oobeNext3.onclick = function () {
+    oobePage2.style.opacity = "0";
+    oobePage2.style.transform = "translateX(-30%)";
+    oobePage2.style.zIndex = "1000";
+
+    oobePage3.style.opacity = "1";
+    oobePage3.style.transform = "translateX(0)";
+    oobePage3.style.zIndex = "1002";
+}
+
+oobeNext4.onclick = function () {
+    oobePage3.style.opacity = "0";
+    oobePage3.style.transform = "translateX(-30%)";
+    oobePage3.style.zIndex = "1000";
+
+    oobeOutro.style.opacity = "1";
+    oobeOutro.style.transform = "translateX(0)";
+    oobeOutro.style.zIndex = "1002";
+}
+
 // Profile menu functions
 
 profBtn.onclick = function () {
@@ -214,7 +275,7 @@ siCustom.onchange = function () {
     siCheckRadios();
 }
 
-// Accent colors (this is gonna suck a$$)
+// Accent colors
 
 const ac7 = document.getElementById("acCheckbox7");
 const ac6 = document.getElementById("acCheckbox6");
@@ -282,6 +343,29 @@ document.getElementById('avatarUpload').addEventListener('change', (e) => {
     navProfIcon.style.backgroundImage = `url(data:image/png;base64,${localStorage['userImage']})`;
     menuProfIcon.style.backgroundImage = `url(data:image/png;base64,${localStorage['userImage']})`;
 
+// Upload+Save Spotlight Background Image
+
+const spotBackImg = document.getElementById("spBackdrop");
+const setupBackImg = document.getElementById("firstVisitSetup");
+
+document.getElementById('backgroundUpload').addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      // convert file to base64 String
+      const base64String = reader.result.replace('data:', '').replace(/^.+,/, '');
+      // store file
+      localStorage.setItem('spotlightCustomImage', base64String);
+      // display image
+      spotBackImg.style.backgroundImage = `url(data:image/png;base64,${base64String})`;
+      setupBackImg.style.backgroundImage = `url(data:image/png;base64,${base64String})`;
+    };
+    reader.readAsDataURL(file);
+});
+
+spotBackImg.style.backgroundImage = `url(data:image/png;base64,${localStorage['spotlightCustomImage']})`;
+setupBackImg.style.backgroundImage = `url(data:image/png;base64,${localStorage['spotlightCustomImage']})`;
+
 // Reveal Effect Area Control
 
 const circle = document.getElementById("reArea");
@@ -312,6 +396,7 @@ function getColor(element) {
     var bgColor = $(element).css('background-color');
     root.style.setProperty('--accent-color-1', bgColor);
     localStorage['accentColor'] = bgColor;
+    document.getElementById("fp2NextBtn").style.backgroundColor = bgColor;
 }
 
 root.style.setProperty('--accent-color-1', localStorage['accentColor']);
@@ -368,8 +453,11 @@ function siCheckRadios() {
     }
 
     if (document.getElementById("siCustom").checked == true) {
+        document.getElementById("backgroundUpload").classList.remove("hidden");
         localStorage.setItem('spotlight', 'custom');
         updateSpotlight("custom");
+    } else {
+        document.getElementById("backgroundUpload").classList.add("hidden");
     }
 }
 
@@ -392,8 +480,9 @@ function updateSpotlight(type = "unsplash") {
 }
 
 function setBackgroundImage(url) {
-    document.getElementById("csImage").style =
-        `background: linear-gradient(146deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 36%), url("` + url + `") center/cover no-repeat var(--page-background)`;
+    document.getElementById("csImage").style = `background: linear-gradient(146deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 36%), url("` + url + `") center/cover no-repeat var(--page-background)`;
+    document.getElementById("firstVisitSetup").style = `background: url("` + url + `") center/cover no-repeat var(--page-background)`;
+
 }
 
 $('#siUnsplashTags').on('blur', function () {

@@ -1,0 +1,242 @@
+/* First visit experience */
+
+.firstVisitSetup{
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+    z-index: 1000;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+
+    background-color: var(--site-background);
+
+    background-image: var(--bloom11);
+    background-size: cover;
+    background-position: bottom center;
+}
+
+.fvsBackImg{
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    z-index: 1000;
+
+    backdrop-filter: blur(50px);
+}
+
+.fvsInvisLayer{
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+    z-index: 1001;
+}
+
+.fvsPanel{
+    width: 60%;
+    max-width: 960px;
+    min-width: 700px;
+    aspect-ratio: 2/1.35;
+
+    background-color: var(--setup-back);
+    backdrop-filter: blur(20px);
+    border-radius: 6px;
+    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.30);
+
+    overflow: hidden;
+    display: flex;
+
+    position: relative;
+    z-index: 1002;
+
+    grid-row-start: 1;
+    grid-column-start: 1;
+
+    transition: opacity .3s, transform .3s;
+}
+
+.fvsPanel:not(.fvsIntro){
+    transform: translateX(30%);
+    opacity: 0;
+    z-index: 1000;
+}
+
+.fvsPLeft, 
+.fvsPRight{
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fvsPRight{
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    padding: 40px 20px;
+}
+
+.fpLeftImg{
+    width: 70%;
+}
+
+.fpNextBtn{
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+
+    display: grid;
+    place-items: center;
+
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+
+    color: white;
+
+    background-color: #0165C7;
+
+    transition: opacity .1s;
+    cursor: pointer;
+}
+
+.fpNextBtn:hover{
+    opacity: .8;
+}
+
+/* Panels */
+
+.fvsIntro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    z-index: 1100;
+}
+
+.fvsPart1{
+    z-index: 1099;
+}
+
+/* Panel 0 - Intro */
+
+.fiImage{
+    width: 100px;
+
+    position: absolute;
+    top: 20%;
+}
+
+.fi1{
+    color: var(--font-color-2);
+
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.fi2{
+    color: var(--font-color-2);
+    opacity: .8;
+
+    font-weight: 500;
+    font-size: 20px;
+
+    margin-top: 15px;
+}
+
+.fiNextBtn{
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+
+    display: grid;
+    place-items: center;
+
+    position: absolute;
+    bottom: 5%;
+
+    color: white;
+
+    background-color: #0165C7;
+
+    transition: opacity .1s;
+    cursor: pointer;
+}
+
+.fiNextBtn:hover{
+    opacity: .8;
+}
+
+/* Panel 1 - Personal Info */
+
+.fp1{
+    font-size: 25px;
+    font-weight: 600;
+
+    color: var(--font-color-2);
+}
+
+.fp2{
+    margin-top: 6px;
+    margin-bottom: 30px;
+
+    color: var(--font-color-2);
+    opacity: .7;
+
+    font-size: 13px;
+
+    width: 90%;
+}
+
+.setupTextBox{
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid #0165C7;
+    background-color: transparent;
+
+    width: 90%;
+    height: 25px;
+
+    color: var(--font-color-2);
+
+    padding: 3px 0;
+}
+
+.setupTextBox:focus{
+    border-bottom: 2px solid var(--font-color-2);
+}
+
+.fvsPRight label{
+    color: var(--font-color-2);
+    font-weight: 600;
+}
+
+/* Panel 2 - Accent Color */
+
+.fp2NBtn{
+    background-color: #0078D4;
+}
+
+/* Panel 3 - Background Image */
+
+.fvsPart3 .fvsPLeft .fpLeftImg{
+    width: 60%;
+    max-width: 256px;
+}
+
+/* Outro Panel */
+
+.fvsOutro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

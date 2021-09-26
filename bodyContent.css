@@ -13,6 +13,10 @@
     text-shadow: 0 0 3px #000000;
 }
 
+.fsRemoval{
+    display: none;
+}
+
 .content{
     position: absolute;
     box-sizing: border-box;
@@ -229,81 +233,6 @@
 
 .sbStart::after{
     content: ""
-}
-
-/* First visit experience */
-
-.firstVisitSetup{
-    width: 100vw;
-    height: 100vh;
-
-    display: none;
-
-    padding: 3em;
-
-    position: absolute;
-    z-index: 1000;
-
-    background-color: var(--page-background);
-    color: var(--font-color-2);
-}
-
-.iHead{
-    font-weight: 600;
-    font-size: 40px;
-}
-
-.iSubhead{
-    font-size: 30px;
-    opacity: .8;
-}
-
-.iSubhead2{
-    margin-top: 7px;
-}
-
-.fvsIntro{
-    margin-bottom: 40px;
-}
-
-.fvsSect{
-    width: calc(100% - 8em);
-    height: fit-content;
-
-    border: 1px solid var(--modal-section-border);
-    border-radius: 5px;
-
-    padding: 1em;
-
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.fvsSect .spwcsTitle{
-    font-size: 20px;
-}
-
-.fvsSect .spwcsTitle span{
-    opacity: 1;
-    display: block;
-    position: unset;
-    transform: none;
-    transition: none;
-
-    width: fit-content;
-    padding: 0;
-}
-
-#fsw1{
-    font-size: 15px;
-}
-
-#fsw2{
-    margin-bottom: 15px;
-    margin-top: 6px;
-
-    opacity: .5;
 }
 
 /* Settings Window */
